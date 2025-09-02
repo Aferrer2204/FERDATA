@@ -1,0 +1,38 @@
+﻿[
+    {
+        "id":  5,
+        "nombre":  "ng enrgy",
+        "locacion":  "aruchara 4",
+        "taladro":  "204",
+        "ubicacion":  "la guajira",
+        "oit":  "13262",
+        "activo":  1
+    },
+    {
+        "id":  7,
+        "nombre":  "GMS",
+        "locacion":  "BASE YOPAL",
+        "taladro":  "N/A",
+        "ubicacion":  "YOPAL-CASANARE",
+        "oit":  "MENSUAL",
+        "activo":  1
+    },
+    {
+        "id":  14,
+        "nombre":  "Asecofyn",
+        "locacion":  "CC ALAMEDAS",
+        "taladro":  "N/A",
+        "ubicacion":  "MONTERIA",
+        "oit":  "00000",
+        "activo":  1
+    },
+    {
+        "id":  15,
+        "nombre":  "SENA",
+        "locacion":  "BOGOTA",
+        "taladro":  "N/A",
+        "ubicacion":  "BOGOTS",
+        "oit":  "00000",
+        "activo":  0
+    }
+]

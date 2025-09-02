@@ -1,0 +1,105 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Logs
+*.log
+logs/
+backend/logs/
+
+# Editor directories
+.vscode/
+.idea/
+
+# Runtime / temp
+tmp/
+temp/
+dist/
+build/
+
+# Frontend uploads (user generated content)
+frontend/uploads/
+
+# Database files
+*.sqlite
+*.db
+
+# Python
+__pycache__/
+
+# npm/yarn debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Do NOT ignore these project deliverables or releases so they can be committed
+# releases/
+# deliverables/
+
+# -----------------------------
+# Sensitive / local config
+# Prevent accidental commits of local credential files, private keys and certs
+# These are intentionally broad to avoid leaking secrets. If you keep a non-secret
+# config file checked in (for example a template) rename it to *.example and commit that instead.
+.env.local
+.env.*.local
+backend/.env
+backend/config.php
+backend/config/*.php
+api/tmp_db_info.php
+
+# Common secret file formats
+*.key
+*.pem
+*.p12
+*.crt
+*.jks
+*.asc
+
+# Credentials / secrets files
+secrets.json
+credentials.json
+*.secret
+
+# -----------------------------
+# Database dumps and exports (ignore future dumps; existing tracked files remain tracked)
+# If you need some SQL files tracked (schema, migrations), keep them under /database/ and commit only sanitized versions.
+*.sql
+*.sql.gz
+*.sql.bak
+*.dump
+*.backup
+
+# -----------------------------
+# Backups, caches and runtime files
+*.tgz
+*.tar.gz
+*.zip
+*.7z
+
+# OS / editor temp files
+*~
+.sass-cache/
+
+# Avoid committing generated logs or runtime data
+logs/
+*.log
+backend/logs/
+tmp/
+temp/
+
+# Uploaded user content
+frontend/uploads/
+uploads/
+
+# Keep releases and deliverables intentionally tracked
+# If you want to exclude a specific release artifact locally, add it to your global gitignore instead.

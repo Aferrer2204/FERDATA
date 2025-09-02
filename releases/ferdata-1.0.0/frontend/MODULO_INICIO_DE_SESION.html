@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnatesting - Inicio de Sesión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables de colores */
+        :root {
+            --primary-color: #2E86AB;
+            --primary-dark: #1a6a8a;
+            --secondary-color: #F18F01;
+            --secondary-dark: #d17d01;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --gray-color: #696363;
+            --danger-color: #E71D36;
+            --success-color: #28a745;
+            --background-gradient: linear-gradient(135deg, #2E86AB 0%, #2f9b53 100%);
+            --card-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            --input-shadow: 0 5px 15px rgba(46, 134, 171, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: var(--background-gradient);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            position: relative;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .login-header {
+            background: var(--primary-color);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .logo {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        .login-content {
+            padding: 40px;
+        }
+
+        .login-form h2 {
+            color: var(--dark-color);
+            margin-bottom: 30px;
+            font-size: 24px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .login-form h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .input-with-icon {
+            position: relative;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            border: 2px solid #eaeaea;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-shadow: var(--input-shadow);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(46, 134, 171, 0.2);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary-color);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(46, 134, 171, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(46, 134, 171, 0.6);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .login-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .login-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 15px;
+            display: inline-block;
+            margin: 0 10px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .login-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--secondary-color);
+            transition: width 0.3s;
+        }
+
+        .login-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .login-links a:hover::after {
+            width: 100%;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ddd, transparent);
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .divider::after {
+            content: "o";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 0 15px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .message {
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+            animation: slideIn 0.5s forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error {
+            background-color: #fef2f2;
+            color: var(--danger-color);
+            border: 1px solid #fecaca;
+            box-shadow: 0 5px 15px rgba(231, 29, 54, 0.1);
+        }
+
+        .success {
+            background-color: #f0fdf4;
+            color: var(--success-color);
+            border: 1px solid #bbf7d0;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.1);
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--gray-color);
+            font-size: 18px;
+            z-index: 2;
+            /* Añadido para asegurar que esté por encima */
+        }
+
+        .password-toggle:hover {
+            color: var(--primary-color);
+        }
+
+        /* Modal de recuperación de contraseña */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modal-header h2 {
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray-color);
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: var(--danger-color);
+        }
+
+        .modal-message {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            line-height: 1.5;
+        }
+
+        .modal-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: block;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .modal-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .login-container {
+                border-radius: 15px;
+            }
+
+            .login-header {
+                padding: 25px 20px;
+            }
+
+            .login-content {
+                padding: 30px 20px;
+            }
+
+            .logo h1 {
+                font-size: 28px;
+            }
+
+            .login-form h2 {
+                font-size: 22px;
+            }
+
+            .login-links a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo">
+                <h1>MAGNATESTING</h1>
+                <div class="logo-subtitle">Sistema de acceso seguro</div>
+            </div>
+        </div>
+
+        <div class="login-content">
+            <div class="login-form">
+                <h2>Iniciar Sesión</h2>
+
+                <!-- Mensajes de feedback -->
+                <div id="message" class="message"></div>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" id="email" class="form-control" placeholder="arturof@magnatesting.com"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="password" class="form-control" placeholder="2025GGC.@" required>
+                            <span class="password-toggle" id="passwordToggle">
+                                <i class="far fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Ingresar</button>
+                </form>
+
+                <div class="divider"></div>
+
+                <div class="login-links">
+                    <a href="#" id="forgotPasswordLink">¿Olvidaste la contraseña?</a>
+                    <a href="MODULO_REGISTRO.html" id="crearCuentaLink">Crear cuenta nueva</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de recuperación de contraseña -->
+    <div id="passwordRecoveryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Recuperar Contraseña</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <p class="modal-message">Ingresa tu dirección de correo electrónico y te enviaremos un enlace para
+                restablecer tu contraseña.</p>
+            <form id="recoveryForm">
+                <div class="form-group">
+                    <label for="recovery-email">Email</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="recovery-email" class="form-control" placeholder="tu@email.com"
+                            required>
+                    </div>
+                </div>
+                <button type="submit" class="modal-btn">Enviar enlace de recuperación</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Toggle para mostrar/ocultar contraseña - CÓDIGO CORREGIDO
+        document.getElementById('passwordToggle').addEventListener('click', function () {
+            const passwordInput = document.getElementById('password');
+            const icon = this.querySelector('i');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+
+        // Función para mostrar mensajes
+        function showMessage(text, type) {
+            const messageEl = document.getElementById('message');
+            messageEl.textContent = text;
+            messageEl.className = 'message ' + type;
+            messageEl.style.display = 'block';
+
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                messageEl.style.display = 'none';
+            }, 5000);
+        }
+
+        // Abrir modal de recuperación de contraseña
+        document.getElementById('forgotPasswordLink').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('passwordRecoveryModal').style.display = 'flex';
+        });
+
+        // Cerrar modal
+        function closeModal() {
+            document.getElementById('passwordRecoveryModal').style.display = 'none';
+        }
+
+        // Manejo del formulario de recuperación
+        document.getElementById('recoveryForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('recovery-email').value;
+
+            // Simular envío de correo (en un caso real, aquí se conectaría con el backend)
+            showMessage(`Se ha enviado un enlace de recuperación a ${email}`, 'success');
+            closeModal();
+            this.reset();
+        });
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.addEventListener('click', function (e) {
+            if (e.target === document.getElementById('passwordRecoveryModal')) {
+                closeModal();
+            }
+        });
+
+    // Manejo del formulario de inicio de sesión
+    document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage('Autenticación satisfactoria', 'success');
+                    // Guardar token y información del usuario
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    // Redirección después de 2 segundos
+                    setTimeout(() => {
+                        window.location.href = 'MODULO_CONTROL_DE_MANDO.html';
+                    }, 2000);
+                } else {
+                    showMessage('Error en la autenticación: ' + data.message, 'error');
+                }
+            } catch (error) {
+                showMessage('Error de conexión: ' + error.message, 'error');
+            }
+        });
+    </script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Verificar si el usuario ya está autenticado
+        document.addEventListener('DOMContentLoaded', function () {
+            const token = localStorage.getItem('token');
+            const user = localStorage.getItem('user');
+
+            if (token && user) {
+                // Si ya está autenticado, redirigir al dashboard
+                setTimeout(() => {
+                    window.location.href = '/dashboard';
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+
+</html>
