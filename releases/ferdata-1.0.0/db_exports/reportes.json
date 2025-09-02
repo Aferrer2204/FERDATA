@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "Reporte de prueba",
+    "tipo": "resumen",
+    "formato": "pdf",
+    "empresa_id": null,
+    "usuario_id": 7,
+    "fecha_generacion": "2025-09-01T15:29:25.000Z",
+    "url": "/frontend/uploads/reportes/sample.pdf",
+    "parametros": null,
+    "created_at": "2025-09-01T15:29:25.000Z"
+  }
+]

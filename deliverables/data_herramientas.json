@@ -1,0 +1,50 @@
+﻿[
+    {
+        "id":  9,
+        "nombre":  "Elevador 4 1/2\"",
+        "empresa_id":  5,
+        "tipo":  "manejo y levante ",
+        "estado":  null,
+        "ultima_inspeccion":  null
+    },
+    {
+        "id":  11,
+        "nombre":  "TUBING",
+        "empresa_id":  7,
+        "tipo":  "REVESTIMIENTO",
+        "estado":  null,
+        "ultima_inspeccion":  "2025-09-01T05:00:00.000Z"
+    },
+    {
+        "id":  12,
+        "nombre":  "MOTO",
+        "empresa_id":  14,
+        "tipo":  "TRANSPORTE",
+        "estado":  null,
+        "ultima_inspeccion":  null
+    },
+    {
+        "id":  13,
+        "nombre":  "PORTATIL",
+        "empresa_id":  15,
+        "tipo":  "TEGNOLOGIA",
+        "estado":  null,
+        "ultima_inspeccion":  null
+    },
+    {
+        "id":  14,
+        "nombre":  "manual tong",
+        "empresa_id":  5,
+        "tipo":  "manejo y levante",
+        "estado":  null,
+        "ultima_inspeccion":  null
+    },
+    {
+        "id":  15,
+        "nombre":  "manual tong",
+        "empresa_id":  5,
+        "tipo":  "manejo y levante",
+        "estado":  null,
+        "ultima_inspeccion":  null
+    }
+]

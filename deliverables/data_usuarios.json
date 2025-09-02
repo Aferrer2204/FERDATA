@@ -1,0 +1,53 @@
+﻿{
+    "value":  [
+                  {
+                      "id":  7,
+                      "nombre":  "JOSE FERRER",
+                      "email":  "ferrero01@hotmail.com",
+                      "rol":  null,
+                      "activo":  1,
+                      "fecha_creacion":  "2025-08-31T15:43:18.000Z"
+                  },
+                  {
+                      "id":  8,
+                      "nombre":  "Verify Run",
+                      "email":  "verify_run_20250831111632@example.com",
+                      "rol":  null,
+                      "activo":  0,
+                      "fecha_creacion":  "2025-08-31T16:16:33.000Z"
+                  },
+                  {
+                      "id":  11,
+                      "nombre":  "franklin m",
+                      "email":  "frankli@ejemplo.com",
+                      "rol":  null,
+                      "activo":  0,
+                      "fecha_creacion":  "2025-08-31T22:19:11.000Z"
+                  },
+                  {
+                      "id":  12,
+                      "nombre":  "URIEL URREA",
+                      "email":  "URIEL@EXAMPLE.COM",
+                      "rol":  null,
+                      "activo":  0,
+                      "fecha_creacion":  "2025-09-01T11:37:50.000Z"
+                  },
+                  {
+                      "id":  13,
+                      "nombre":  "janner castañeda",
+                      "email":  "janner@gmail.com",
+                      "rol":  null,
+                      "activo":  0,
+                      "fecha_creacion":  "2025-09-01T15:15:05.000Z"
+                  },
+                  {
+                      "id":  14,
+                      "nombre":  "Tester",
+                      "email":  "test@example.com",
+                      "rol":  null,
+                      "activo":  0,
+                      "fecha_creacion":  "2025-09-01T17:20:37.000Z"
+                  }
+              ],
+    "Count":  6
+}

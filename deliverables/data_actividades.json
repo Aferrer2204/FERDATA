@@ -1,0 +1,57 @@
+﻿[
+    {
+        "id":  4,
+        "fecha":  "2025-09-01T05:00:00.000Z",
+        "empresa":  null,
+        "contacto":  null,
+        "avance":  null,
+        "locacion":  null,
+        "usuario":  null,
+        "observaciones":  "Prueba adaptativa",
+        "cliente_nombre":  null
+    },
+    {
+        "id":  5,
+        "fecha":  "2025-09-01T05:00:00.000Z",
+        "empresa":  null,
+        "contacto":  null,
+        "avance":  null,
+        "locacion":  null,
+        "usuario":  null,
+        "observaciones":  null,
+        "cliente_nombre":  null
+    },
+    {
+        "id":  6,
+        "fecha":  "2025-09-01T05:00:00.000Z",
+        "empresa":  7,
+        "contacto":  null,
+        "avance":  null,
+        "locacion":  null,
+        "usuario":  null,
+        "observaciones":  "TODA READY",
+        "cliente_nombre":  "GMS"
+    },
+    {
+        "id":  2,
+        "fecha":  "2025-08-31T05:00:00.000Z",
+        "empresa":  null,
+        "contacto":  "Contacto Null",
+        "avance":  "Planta",
+        "locacion":  "Linea A",
+        "usuario":  "Automatizado",
+        "observaciones":  "Prueba sin cliente",
+        "cliente_nombre":  null
+    },
+    {
+        "id":  7,
+        "fecha":  "2025-08-31T05:00:00.000Z",
+        "empresa":  null,
+        "contacto":  null,
+        "avance":  "10",
+        "locacion":  null,
+        "usuario":  null,
+        "observaciones":  "Actividad con inspector desde header",
+        "cliente_nombre":  null
+    }
+]
