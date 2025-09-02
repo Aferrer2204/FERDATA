@@ -23,9 +23,6 @@ docker-compose up -d --build
 # phpMyAdmin at http://localhost:8081
 ```
 
-Documentación adicional: revisar archivos en `docs/` y actualizar con datos reales (URLs, resultados de pruebas, manuales).
-# FERDATA
-
 FERDATA es una aplicación web para la gestión de empresas, herramientas e inspecciones. Este repositorio contiene el frontend estático, endpoints PHP legacy y un backend Node.js opcional.
 
 Contenido principal
